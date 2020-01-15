@@ -2,20 +2,24 @@
   "name": "@naturacosmeticos/api-linter",
   "version": "0.0.1",
   "description": "A comprehensive API linter for swagger files following Natura Cosmeticos best practices",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "repository": "https://github.com/natura-cosmeticos/api-linter.git",
+  "homepage": "https://github.com/natura-cosmeticos/api-linter",
   "author": "Natura Cosméticos <TDDAArquitetura@natura.net>",
   "contributors": [
     "Handrus Stephan Nogueira <handrus@gmail.com>",
-    "Matheus Robert Lichtnow <matheus@vizir.com.br>"
+    "Matheus Robert Lichtnow <matheus@vizir.com.br>",
+    "Vagner Saraiva <vagner@vizir.com.br>"
   ],
   "license": "MIT",
   "dependencies": {
+    "swagger-parser": "^8.0.4",
     "typescript": "^3.7.4"
   },
   "scripts": {
     "build": "tsc",
-    "lint": "tslint 'src/**/*.{ts,tsx}'",
+    "lint": "tslint 'src/**/*.ts'",
     "dev": "tsc --watch",
     "test": "jest --collectCoverage",
     "test:update": "npm run test -u",
@@ -35,5 +39,11 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ]
 }
