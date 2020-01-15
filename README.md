@@ -8,8 +8,8 @@ A comprehensive API linter for swagger files following Natura Cosmeticos best pr
 
 ```sh
 # with npm
-npm install --save @naturacosmeticos/natds-styles
+npm install --save @naturacosmeticos/api-linter
 
 # with yarn
-yarn add @naturacosmeticos/natds-styles
+yarn add @naturacosmeticos/api-linter
 ```
