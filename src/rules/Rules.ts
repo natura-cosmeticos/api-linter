@@ -1,25 +1,21 @@
 /**
- * Possible rules to use, they are all `true` by default
+ * Possible rules to use
  */
 export interface Rules {
   /**
-   * Allow missing port on api url
+   * Checks for missing port number on server url, defaults to `true`
    */
-  "no-port"?: boolean;
+  "must-contain-port"?: boolean;
   /**
-   * Allow missing domain on api url
+   * Allow resource names in singular, defaults to `true`
    */
-  "no-domain"?: boolean;
+  "no-singular-resource"?: boolean;
   /**
-   * Allow missing context on api url
+   * Checks for missing version number on server url, defaults to `true`
    */
-  "no-context"?: boolean;
+  "must-contain-version"?: boolean;
   /**
-   * Allow missing version on api url
+   * Checks for missing `/domain/context` on server url, defaults to `true`
    */
-  "no-version"?: boolean;
-  /**
-   * Allow missing resource on api url
-   */
-  "no-resource"?: boolean;
+  "must-contain-domain-and-context"?: boolean;
 }

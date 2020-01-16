@@ -3,7 +3,7 @@
  */
 export interface RuleFault {
   value: string;
-  errors: [RuleFaultContent];
+  errors: RuleFaultContent[];
 }
 
 /**
