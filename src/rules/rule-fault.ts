@@ -18,6 +18,6 @@ export interface RuleFaultContent {
  * Rule Fault severity
  */
 export enum Severity {
-  error,
-  warning
+  error = 'ERROR',
+  warning = 'WARNING'
 }

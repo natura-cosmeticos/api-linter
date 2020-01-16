@@ -15,12 +15,16 @@ const defaultRules: Rules = {
  * @returns A Promise of an array of RuleFault
  */
 export const validate = async (api: string, rules: Rules) => {
-  const swagger = await parse(api);
+  const parsedApi: any = await parse(api);
+
+  if (parsedApi.swagger) {
+    return Promise.reject(Error('This is not using OpenAPI 3.0.0^'));
+  }
 
   const parsedRules: Rules = {
     ...defaultRules,
     ...rules
   };
 
-  return handleRules(swagger, parsedRules);
+  return Promise.resolve(handleRules(parsedApi, parsedRules));
 };
