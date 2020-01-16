@@ -25,12 +25,13 @@
     "dev": "tsc --watch",
     "test": "jest --collectCoverage",
     "test:update": "npm run test -u",
-    "commit": "npx git-cz"
+    "cm": "npx git-cz"
   },
   "devDependencies": {
     "@types/jest": "^24.9.0",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
+    "husky": "^4.0.10",
     "jest": "^24.9.0",
     "semantic-release": "^16.0.1",
     "ts-jest": "^24.3.0",
@@ -40,6 +41,12 @@
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test"
     }
   },
   "publishConfig": {
