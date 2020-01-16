@@ -14,7 +14,9 @@
     "semicolon": true,
     "no-console": {
       "severity": "warning"
-    }
+    },
+    "interface-name": false,
+    "forin": false
   },
   "rulesDirectory": []
 }
