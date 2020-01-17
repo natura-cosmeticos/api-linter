@@ -21,7 +21,7 @@ info:
   x-preferred: true
   x-providerName: geodatasource.com
 paths:
-  /city:
+  /city/building:
     get:
       description: Get City name by using latitude and longitude
       parameters:

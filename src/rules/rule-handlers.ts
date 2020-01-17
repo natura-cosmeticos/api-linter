@@ -1,7 +1,7 @@
 import { Rules } from "./rules";
 import { RuleFault } from "./rule-fault";
 import { OpenAPI } from "openapi-types";
-import { mustContainServerURL, mustContainPort } from './handlers';
+import { mustContainServerURL, mustContainPort, noSingularResource } from './handlers';
 
 /**
  * Defines interface that must be implemented for rule handling
@@ -18,5 +18,5 @@ export const Handlers: RuleHandlers = {
   "must-contain-server-url": mustContainServerURL,
   "must-contain-port": mustContainPort,
   "must-contain-version": (api, ruleFaults) => { return; },
-  "no-singular-resource": (api, ruleFaults) => { return; }
+  "no-singular-resource": noSingularResource
 };

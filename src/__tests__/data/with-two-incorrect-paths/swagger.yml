@@ -57,3 +57,39 @@ paths:
               schema:
                 type: string
           description: Get response from longitude latitude lookup
+  /building:
+    get:
+      description: Get City name by using latitude and longitude
+      parameters:
+        - in: query
+          name: key
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: lng
+          required: true
+          schema:
+            type: number
+        - in: query
+          name: lat
+          required: true
+          schema:
+            type: number
+        - in: query
+          name: format
+          schema:
+            enum:
+              - json
+              - xml
+            type: string
+      responses:
+        '200':
+          content:
+            application/json; charset=utf-8:
+              examples:
+                '0':
+                  value: '{"country":"","region":"","city":"","latitude":"","longitude":""}'
+              schema:
+                type: string
+          description: Get response from longitude latitude lookup
