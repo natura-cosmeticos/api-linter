@@ -6,6 +6,16 @@ describe('validate function', () => {
   jest.mock('../../rules/handle-rules.ts', () => ({ handleRules: mockFn }));
 
   const apiFile = path.join(__dirname, '..', 'data', 'correct', 'swagger.yml');
+  const swaggerFile = path.join(__dirname, '..', 'data', 'swagger-2.0', 'swagger.yml');
+
+  const defaultRules: Rules = {
+    "must-contain-domain-and-context": true,
+    "must-contain-port": true,
+    "must-contain-version": true,
+    "no-singular-resource": true
+  };
+
+
 
   it('should use use the provided rules', async () => {
     const mockedRules: Rules = {
@@ -27,13 +37,6 @@ describe('validate function', () => {
   });
 
   it('should use the default rules', async () => {
-    const defaultRules: Rules = {
-      "must-contain-domain-and-context": true,
-      "must-contain-port": true,
-      "must-contain-version": true,
-      "no-singular-resource": true
-    };
-
     /**
      * Require goes here due to internal mocking
      */
@@ -43,5 +46,14 @@ describe('validate function', () => {
     await validate(apiFile, {});
 
     expect(mockFn).toHaveBeenCalledWith(api, defaultRules);
+  });
+
+  it('should fail when swagger file is 2.0', async () => {
+    /**
+     * Require goes here due to internal mocking
+     */
+    const { validate } = require('../../index');
+
+    await expect(validate(swaggerFile, {})).rejects.toThrowError('This is not using OpenAPI 3.0.0^');
   });
 });

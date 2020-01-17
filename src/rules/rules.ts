@@ -7,6 +7,10 @@ export interface Rules {
    */
   "must-contain-port"?: boolean;
   /**
+   * Checks for server url properties, defaults to true
+   */
+  "must-contain-server-url"?: boolean;
+  /**
    * Allow resource names in singular, defaults to `true`
    */
   "no-singular-resource"?: boolean;
