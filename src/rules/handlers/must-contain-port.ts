@@ -1,6 +1,7 @@
 import { OpenAPI } from "openapi-types";
 import Url from "url-parse";
 import { RuleFault, Severity, RuleFaultContent } from "../rule-fault";
+import { produceRuleFaultValueForUrl, pushFault } from './util';
 
 const faults = {
   mustContainPort: 'Missing port on url property'
@@ -8,7 +9,7 @@ const faults = {
 
 const produceMustContainPort = (urlString: string): RuleFault => {
   return {
-    value: `Server url: ${urlString}`,
+    value: produceRuleFaultValueForUrl(urlString),
     errors: [
       {
         severity: Severity.warning,
@@ -35,7 +36,7 @@ export const mustContainPort = (api: OpenAPI.Document, ruleFaults: RuleFault[]) 
 
   apiParsed.servers.forEach((server: any) => {
     if (isPortMissing(server.url)) {
-      ruleFaults.push(produceMustContainPort(server.url));
+      pushFault(produceMustContainPort(server.url), ruleFaults);
     }
   });
 
