@@ -3,9 +3,10 @@ import pluralize from 'pluralize';
 import { RuleFault, Severity, RuleFaultContent } from "../rule-fault";
 import { produceRuleFaultForPath, pushFault } from "./util";
 
-const injectPluralizeRules = () => {
-  pluralize.addUncountableRule(/\d+$/);
-};
+/**
+ * Injects custom rules for plural
+ */
+pluralize.addUncountableRule(/\d+$/);
 
 const faults = {
   noSingularResource: 'Singular word found on resource:'
@@ -24,10 +25,6 @@ const produceNoSingularResource = (path: string, singularResources: string[]): R
 };
 
 export const noSingularResource = (api: OpenAPI.Document, ruleFaults: RuleFault[]) => {
-  /**
-   * Injects custom rules for plural
-   */
-  injectPluralizeRules();
 
   const apiParsed: any = api;
 
