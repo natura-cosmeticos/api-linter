@@ -5,7 +5,8 @@ import {
   mustContainServerURL,
   mustContainPort,
   noSingularResource,
-  mustContainVersion
+  mustContainVersion,
+  mustContainDomainAndContext
 } from './handlers';
 
 /**
@@ -19,7 +20,7 @@ export type RuleHandlers = {
  * Object containing all the rule handlers
  */
 export const Handlers: RuleHandlers = {
-  "must-contain-domain-and-context": (api, ruleFaults) => { return; },
+  "must-contain-domain-and-context": mustContainDomainAndContext,
   "must-contain-server-url": mustContainServerURL,
   "must-contain-port": mustContainPort,
   "must-contain-version": mustContainVersion,
