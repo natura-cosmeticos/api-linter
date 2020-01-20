@@ -1,8 +1,8 @@
 openapi: 3.0.1
 servers:
-  - url: 'https://api.geodatasource.com'
-  - url: 'https://api.geodatasource.com:9090'
-  - url: 'https://api.geodatasource.com'
+  - url: 'https://api.geodatasourceabc.com'
+  - url: 'https://api.geodatasourceacb.com:9090'
+  - url: 'https://api.geodatasourcecba.com'
 info:
   contact:
     x-twitter: _geodatasource

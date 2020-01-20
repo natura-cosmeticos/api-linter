@@ -1,6 +1,7 @@
 import { OpenAPI } from "openapi-types";
 import pluralize from 'pluralize';
 import { RuleFault, Severity, RuleFaultContent } from "../rule-fault";
+import { produceRuleFaultForPath, pushFault } from "./util";
 
 const injectPluralizeRules = () => {
   pluralize.addUncountableRule(/\d+$/);
@@ -12,7 +13,7 @@ const faults = {
 
 const produceNoSingularResource = (path: string, singularResources: string[]): RuleFault => {
   return {
-    value: `Path: ${path}`,
+    value: produceRuleFaultForPath(path),
     errors: singularResources.map(resource => {
       return {
         severity: Severity.warning,
@@ -57,7 +58,7 @@ export const noSingularResource = (api: OpenAPI.Document, ruleFaults: RuleFault[
 
     /* istanbul ignore else  */
     if (singularResources.length) {
-      ruleFaults.push(produceNoSingularResource(path, singularResources));
+      pushFault(produceNoSingularResource(path, singularResources), ruleFaults);
     }
   });
 };
