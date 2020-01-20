@@ -2,6 +2,10 @@ import { OpenAPI } from "openapi-types";
 import pluralize from 'pluralize';
 import { RuleFault, Severity, RuleFaultContent } from "../rule-fault";
 
+const injectPluralizeRules = () => {
+  pluralize.addUncountableRule(/\d+$/);
+};
+
 const faults = {
   noSingularResource: 'Singular word found on resource:'
 };
@@ -19,6 +23,11 @@ const produceNoSingularResource = (path: string, singularResources: string[]): R
 };
 
 export const noSingularResource = (api: OpenAPI.Document, ruleFaults: RuleFault[]) => {
+  /**
+   * Injects custom rules for plural
+   */
+  injectPluralizeRules();
+
   const apiParsed: any = api;
 
   /**
@@ -38,6 +47,8 @@ export const noSingularResource = (api: OpenAPI.Document, ruleFaults: RuleFault[
       /* istanbul ignore else  */
       /**
        * If the plural of the word is not the word itself, then it is singular
+       * Always looks for the last word in a group, e.g.,
+       * test-test-test -> test-test-tests
        */
       if (pluralize(splitPath) !== splitPath) {
         singularResources.push(splitPath);
