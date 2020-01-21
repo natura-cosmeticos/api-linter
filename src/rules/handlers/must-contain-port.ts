@@ -39,5 +39,4 @@ export const mustContainPort = (api: OpenAPI.Document, ruleFaults: RuleFault[]) 
       pushFault(produceMustContainPort(server.url), ruleFaults);
     }
   });
-
 };
