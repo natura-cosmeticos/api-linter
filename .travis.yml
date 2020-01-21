@@ -3,21 +3,33 @@ language: node_js
 os:
   - linux
 
-cache:
-  directories:
-    - node_modules
+matrix:
+  include:
+    - language: node_js
+      if: branch = master AND type = pull_request
+      node_js:
+        - 12
+        - 10
+      before_script:
+        - npm run lint
+        - npm run build
+      install:
+        - npm install
+        - npm run snyk
+      script:
+        - npm test
 
-node_js:
-  - 12
-  - 10
-
-install:
-  - npm install
-  - npm run snyk
-
-before_script:
-  - npm run lint
-  - npm run build
-
-script:
-  - npm test
+jobs:
+  include:
+    - stage: release
+      node_js: 12
+      if: branch = master AND type = push
+      script: skip
+      install:
+        - npm install
+        - npm run build
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
