@@ -1,6 +1,6 @@
 {
   "name": "@naturacosmeticos/api-linter",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "A comprehensive API linter for swagger files following Natura Cosmeticos best practices",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -32,7 +32,8 @@
     "test": "jest --collectCoverage",
     "test:update": "npm run test -u",
     "snyk": "snyk monitor",
-    "cm": "npx git-cz"
+    "cm": "npx git-cz",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@types/jest": "^24.9.0",
@@ -41,7 +42,7 @@
     "cz-conventional-changelog": "^3.0.2",
     "husky": "^4.0.10",
     "jest": "^24.9.0",
-    "semantic-release": "^16.0.1",
+    "semantic-release": "^16.0.2",
     "snyk": "^1.278.1",
     "ts-jest": "^24.3.0",
     "tslint": "^5.20.1",

@@ -31,10 +31,7 @@ jobs:
       node_js: 12
       if: branch = master AND type = push
       script: skip
-      install:
-        - npm install
-        - npm run build
       deploy:
         provider: script
         cleanup: true
-        script: npx semantic-release
+        script: npm install && npm run build && npm run semantic-release
