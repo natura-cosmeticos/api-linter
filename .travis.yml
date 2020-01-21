@@ -3,13 +3,11 @@ language: node_js
 os:
   - linux
 
-matrix:
+jobs:
   include:
-    - language: node_js
-      if: branch = master AND type = pull_request
-      node_js:
-        - 12
-        - 10
+    - stage: Testing (node 12)
+      node_js: 12
+      if: type = pull_request
       before_script:
         - npm run lint
         - npm run build
@@ -18,9 +16,17 @@ matrix:
         - npm run snyk
       script:
         - npm test
-
-jobs:
-  include:
+    - stage: Testing (node 10)
+      node_js: 10
+      if: type = pull_request
+      before_script:
+        - npm run lint
+        - npm run build
+      install:
+        - npm install
+        - npm run snyk
+      script:
+        - npm test
     - stage: release
       node_js: 12
       if: branch = master AND type = push
@@ -30,6 +36,6 @@ jobs:
         - npm run build
       deploy:
         provider: script
-        skip_cleanup: true
+        cleanup: true
         script:
           - npx semantic-release
