@@ -2,9 +2,14 @@ import { parse } from '../swagger/swagger-parser';
 import { Rules } from '../rules/rules';
 import { handleRules } from '../rules/handle-rules';
 
-const defaultRules: Rules = {
+type DefaultRules = {
+  [P in keyof Required<Rules>]: boolean;
+};
+
+const defaultRules: DefaultRules = {
   "must-contain-domain-and-context": true,
   "must-contain-port": true,
+  "must-contain-server-url": true,
   "must-contain-version": true,
   "no-singular-resource": true
 };
