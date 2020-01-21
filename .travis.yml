@@ -3,21 +3,38 @@ language: node_js
 os:
   - linux
 
-cache:
-  directories:
-    - node_modules
-
-node_js:
-  - 12
-  - 10
-
-install:
-  - npm install
-  - npm run snyk
-
-before_script:
-  - npm run lint
-  - npm run build
-
-script:
-  - npm test
+jobs:
+  include:
+    - stage: Testing (node 12)
+      node_js: 12
+      if: type = pull_request
+      before_script:
+        - npm run lint
+        - npm run build
+      install:
+        - npm install
+        - npm run snyk
+      script:
+        - npm test
+    - stage: Testing (node 10)
+      node_js: 10
+      if: type = pull_request
+      before_script:
+        - npm run lint
+        - npm run build
+      install:
+        - npm install
+        - npm run snyk
+      script:
+        - npm test
+    - stage: release
+      node_js: 12
+      if: branch = master AND type = push
+      script: skip
+      install:
+        - npm install
+        - npm run build
+      deploy:
+        provider: script
+        cleanup: true
+        script: npx semantic-release
