@@ -1,0 +1,15 @@
+{
+  "name": "jest-swagger-faults",
+  "version": "0.0.0-development",
+  "description": "A sample project for the @naturacosmeticos/api-linter package",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@naturacosmeticos/api-linter": "^1.0.3",
+    "jest": "^24.9.0"
+  },
+  "private": true
+}
