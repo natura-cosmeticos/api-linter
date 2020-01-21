@@ -8,21 +8,23 @@ describe('validate function', () => {
   const apiFile = path.join(__dirname, '..', 'data', 'correct', 'swagger.yml');
   const swaggerFile = path.join(__dirname, '..', 'data', 'swagger-2.0', 'swagger.yml');
 
-  const defaultRules: Rules = {
+  const defaultRules: Required<Rules> = {
     "must-contain-domain-and-context": true,
     "must-contain-port": true,
     "must-contain-version": true,
-    "no-singular-resource": true
+    "no-singular-resource": true,
+    "must-contain-server-url": true
   };
 
 
 
   it('should use use the provided rules', async () => {
-    const mockedRules: Rules = {
+    const mockedRules: Required<Rules> = {
       "must-contain-domain-and-context": false,
       "must-contain-port": false,
       "must-contain-version": false,
-      "no-singular-resource": false
+      "no-singular-resource": false,
+      "must-contain-server-url": false
     };
 
     /**
