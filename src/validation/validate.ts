@@ -6,7 +6,7 @@ type DefaultRules = {
   [P in keyof Required<Rules>]: boolean;
 };
 
-const defaultRules: DefaultRules = {
+export const DefaultRules: DefaultRules = {
   "must-contain-domain-and-context": true,
   "must-contain-port": true,
   "must-contain-server-url": true,
@@ -28,7 +28,7 @@ export const validate = async (api: string, rules?: Rules) => {
   }
 
   const parsedRules: Rules = {
-    ...defaultRules,
+    ...DefaultRules,
     ...rules
   };
 

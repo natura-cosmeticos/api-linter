@@ -3,6 +3,9 @@
   "version": "0.0.0-development",
   "description": "A comprehensive API linter for swagger files following Natura Cosmeticos best practices",
   "main": "dist/index.js",
+  "bin": {
+    "api-linter": "./dist/cli.js"
+  },
   "typings": "dist/index.d.ts",
   "repository": "https://github.com/natura-cosmeticos/api-linter.git",
   "homepage": "https://github.com/natura-cosmeticos/api-linter",
@@ -28,11 +31,13 @@
     "pluralize": "^8.0.0",
     "swagger-parser": "^8.0.4",
     "typescript": "^3.7.4",
-    "url-parse": "^1.4.7"
+    "url-parse": "^1.4.7",
+    "yargs": "^15.1.0"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run cli:runnable",
     "lint": "tslint 'src/**/*.ts'",
+    "cli:runnable": "chmod +x ./dist/cli.js",
     "dev": "tsc --watch",
     "test": "jest --collectCoverage",
     "test:update": "npm run test -u",
@@ -43,6 +48,7 @@
   "devDependencies": {
     "@types/jest": "^24.9.0",
     "@types/pluralize": "0.0.29",
+    "@types/yargs": "^15.0.1",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
     "husky": "^4.0.10",
