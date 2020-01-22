@@ -1,6 +1,6 @@
 # @naturacosmeticos/api-linter
 
-[![Build Status](https://travis-ci.org/natura-cosmeticos/api-linter.svg?branch=master)](https://travis-ci.org/natura-cosmeticos/api-linter)
+[![Build Status](https://travis-ci.org/natura-cosmeticos/api-linter.svg?branch=master)](https://travis-ci.org/natura-cosmeticos/api-linter) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) ![NPM](https://img.shields.io/npm/l/@naturacosmeticos/api-linter) [![Known Vulnerabilities](https://snyk.io/test/github/natura-cosmeticos/api-linter/badge.svg)](https://snyk.io/test/github/natura-cosmeticos/api-linter)
 
 A comprehensive API linter for swagger files using OpenAPI 3.0 following Natura Cosmeticos best practices
 
