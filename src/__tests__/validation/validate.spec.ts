@@ -16,8 +16,6 @@ describe('validate function', () => {
     "must-contain-server-url": true
   };
 
-
-
   it('should use use the provided rules', async () => {
     const mockedRules: Required<Rules> = {
       "must-contain-domain-and-context": false,
@@ -45,7 +43,7 @@ describe('validate function', () => {
     const { validate, parse } = require('../../index');
 
     const api = await parse(apiFile);
-    await validate(apiFile, {});
+    await validate(apiFile);
 
     expect(mockFn).toHaveBeenCalledWith(api, defaultRules);
   });
