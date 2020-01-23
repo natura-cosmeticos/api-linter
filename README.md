@@ -30,3 +30,12 @@ promise.then(faults => {
   console.error(err);
 });
 ```
+
+## CLI
+```sh
+$ npm install -g @naturacosmeticos/api-linter
+
+$ api-linter --help ## For options
+
+$ api-linter --file=/path/to/swagger.yml ## Basic usage
+```
