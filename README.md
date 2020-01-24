@@ -22,7 +22,18 @@ const { validate } = require('@naturacosmeticos/api-linter');
 
 const swaggerFile = path.join('path', 'to', 'swagger', 'file.yml');
 
-const promise = validate(swaggerFile);
+/**
+ * Optional rules object for disabling/enabling rules
+ */
+const options = {
+  "must-contain-port": true;
+  "must-contain-server-url": true;
+  "no-singular-resource": true;
+  "must-contain-version": true;
+  "must-contain-domain-and-context": true;
+};
+
+const promise = validate(swaggerFile, options);
 
 promise.then(faults => {
   console.log(faults);
@@ -32,10 +43,40 @@ promise.then(faults => {
 ```
 
 ## CLI
+
 ```sh
 $ npm install -g @naturacosmeticos/api-linter
 
 $ api-linter --help ## For options
 
 $ api-linter --file=/path/to/swagger.yml ## Basic usage
+```
+
+## Rules
+
+These are the rules checked by the linter
+
+```javascript
+{
+  /**
+   * Checks for missing port number on server url, defaults to `true`
+   */
+  "must-contain-port": boolean;
+  /**
+   * Checks for server url properties, defaults to true
+   */
+  "must-contain-server-url": boolean;
+  /**
+   * Allow resource names in singular, defaults to `true`
+   */
+  "no-singular-resource": boolean;
+  /**
+   * Checks for missing version number on server url, defaults to `true`
+   */
+  "must-contain-version": boolean;
+  /**
+   * Checks for missing `/domain/context` on server url, defaults to `true`
+   */
+  "must-contain-domain-and-context": boolean;
+}
 ```
