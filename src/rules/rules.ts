@@ -23,7 +23,11 @@ export interface Rules {
    */
   "must-contain-domain-and-context"?: boolean;
   /**
-   * Checks for resources not using spinal case
+   * Checks for resources not using spinal case, defaults to `true`
    */
   "resource-spinal-case"?: boolean;
+  /**
+   * Checks for main media types defined in RFC 6838, defaults to `true`
+   */
+  "no-custom-media-type"?: boolean;
 }

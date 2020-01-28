@@ -12,7 +12,8 @@ export const DefaultRules: DefaultRules = {
   "must-contain-server-url": true,
   "must-contain-version": true,
   "no-singular-resource": true,
-  "resource-spinal-case": true
+  "resource-spinal-case": true,
+  "no-custom-media-type": true
 };
 
 /**

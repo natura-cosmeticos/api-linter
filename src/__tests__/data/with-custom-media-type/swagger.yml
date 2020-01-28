@@ -50,7 +50,7 @@ paths:
       responses:
         '200':
           content:
-            application/pdf:
+            custom-media-type:
               examples:
                 '0':
                   value: '{"country":"","region":"","city":"","latitude":"","longitude":""}'
