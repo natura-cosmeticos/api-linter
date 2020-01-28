@@ -11,7 +11,8 @@ export const DefaultRules: DefaultRules = {
   "must-contain-port": true,
   "must-contain-server-url": true,
   "must-contain-version": true,
-  "no-singular-resource": true
+  "no-singular-resource": true,
+  "resource-spinal-case": true
 };
 
 /**

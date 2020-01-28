@@ -22,4 +22,8 @@ export interface Rules {
    * Checks for missing `/domain/context` on server url, defaults to `true`
    */
   "must-contain-domain-and-context"?: boolean;
+  /**
+   * Checks for resources not using spinal case
+   */
+  "resource-spinal-case"?: boolean;
 }

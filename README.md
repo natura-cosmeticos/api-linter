@@ -78,5 +78,9 @@ These are the rules checked by the linter
    * Checks for missing `/domain/context` on server url, defaults to `true`
    */
   "must-contain-domain-and-context": boolean;
+  /**
+   * Checks for resources not using spinal case
+   */
+  "resource-spinal-case"?: boolean;
 }
 ```
