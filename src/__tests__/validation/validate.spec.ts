@@ -13,7 +13,8 @@ describe('validate function', () => {
     "must-contain-port": true,
     "must-contain-version": true,
     "no-singular-resource": true,
-    "must-contain-server-url": true
+    "must-contain-server-url": true,
+    "resource-spinal-case": true
   };
 
   it('should use use the provided rules', async () => {
@@ -22,7 +23,8 @@ describe('validate function', () => {
       "must-contain-port": false,
       "must-contain-version": false,
       "no-singular-resource": false,
-      "must-contain-server-url": false
+      "must-contain-server-url": false,
+      "resource-spinal-case": false
     };
 
     /**

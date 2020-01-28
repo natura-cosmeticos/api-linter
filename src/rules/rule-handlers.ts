@@ -6,7 +6,8 @@ import {
   mustContainPort,
   noSingularResource,
   mustContainVersion,
-  mustContainDomainAndContext
+  mustContainDomainAndContext,
+  resourceSpinalCase
 } from './handlers';
 
 /**
@@ -24,5 +25,6 @@ export const Handlers: RuleHandlers = {
   "must-contain-server-url": mustContainServerURL,
   "must-contain-port": mustContainPort,
   "must-contain-version": mustContainVersion,
-  "no-singular-resource": noSingularResource
+  "no-singular-resource": noSingularResource,
+  "resource-spinal-case": resourceSpinalCase
 };
