@@ -7,7 +7,8 @@ import {
   noSingularResource,
   mustContainVersion,
   mustContainDomainAndContext,
-  resourceSpinalCase
+  resourceSpinalCase,
+  noCustomMediaType
 } from './handlers';
 
 /**
@@ -26,5 +27,6 @@ export const Handlers: RuleHandlers = {
   "must-contain-port": mustContainPort,
   "must-contain-version": mustContainVersion,
   "no-singular-resource": noSingularResource,
-  "resource-spinal-case": resourceSpinalCase
+  "resource-spinal-case": resourceSpinalCase,
+  "no-custom-media-type": noCustomMediaType
 };

@@ -26,11 +26,13 @@ const swaggerFile = path.join('path', 'to', 'swagger', 'file.yml');
  * Optional rules object for disabling/enabling rules
  */
 const options = {
-  "must-contain-port": true;
-  "must-contain-server-url": true;
-  "no-singular-resource": true;
-  "must-contain-version": true;
-  "must-contain-domain-and-context": true;
+  "must-contain-port": true,
+  "must-contain-server-url": true,
+  "no-singular-resource": true,
+  "must-contain-version": true,
+  "must-contain-domain-and-context": true,
+  "resource-spinal-case": true,
+  "no-custom-media-type": true
 };
 
 const promise = validate(swaggerFile, options);
@@ -82,5 +84,9 @@ These are the rules checked by the linter
    * Checks for resources not using spinal case
    */
   "resource-spinal-case"?: boolean;
+  /**
+   * Checks for main media types defined in RFC 6838, defaults to `true`
+   */
+  "no-custom-media-type"?: boolean;
 }
 ```
