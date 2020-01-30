@@ -32,7 +32,8 @@ const options = {
   "must-contain-version": true,
   "must-contain-domain-and-context": true,
   "resource-spinal-case": true,
-  "no-custom-media-type": true
+  "no-custom-media-type": true,
+  "must-contain-media-type-version": true
 };
 
 const promise = validate(swaggerFile, options);
@@ -88,5 +89,9 @@ These are the rules checked by the linter
    * Checks for main media types defined in RFC 6838, defaults to `true`
    */
   "no-custom-media-type"?: boolean;
+  /**
+   * Checks for the presence of version parameter on vendor specific media types
+   */
+  "must-contain-media-type-version"?: boolean;
 }
 ```

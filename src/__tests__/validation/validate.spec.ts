@@ -15,7 +15,8 @@ describe('validate function', () => {
     "no-singular-resource": true,
     "must-contain-server-url": true,
     "resource-spinal-case": true,
-    "no-custom-media-type": true
+    "no-custom-media-type": true,
+    "must-contain-media-type-version": true
   };
 
   it('should use use the provided rules', async () => {
@@ -26,7 +27,8 @@ describe('validate function', () => {
       "no-singular-resource": false,
       "must-contain-server-url": false,
       "resource-spinal-case": false,
-      "no-custom-media-type": false
+      "no-custom-media-type": false,
+      "must-contain-media-type-version": false
     };
 
     /**
