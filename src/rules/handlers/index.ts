@@ -5,6 +5,7 @@ import { mustContainVersion } from './must-contain-version';
 import { mustContainDomainAndContext } from './must-contain-domain-and-context';
 import { resourceSpinalCase } from './resource-spinal-case';
 import { noCustomMediaType } from './no-custom-media-type';
+import { mustContainMediaTypeVersion } from './must-contain-media-type-version';
 
 export {
   mustContainServerURL,
@@ -13,5 +14,6 @@ export {
   mustContainVersion,
   mustContainDomainAndContext,
   resourceSpinalCase,
-  noCustomMediaType
+  noCustomMediaType,
+  mustContainMediaTypeVersion
 };

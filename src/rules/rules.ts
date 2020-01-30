@@ -30,4 +30,8 @@ export interface Rules {
    * Checks for main media types defined in RFC 6838, defaults to `true`
    */
   "no-custom-media-type"?: boolean;
+  /**
+   * Checks for the presence of version parameter on vendor specific media types
+   */
+  "must-contain-media-type-version"?: boolean;
 }

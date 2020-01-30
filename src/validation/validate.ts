@@ -13,7 +13,8 @@ export const DefaultRules: DefaultRules = {
   "must-contain-version": true,
   "no-singular-resource": true,
   "resource-spinal-case": true,
-  "no-custom-media-type": true
+  "no-custom-media-type": true,
+  "must-contain-media-type-version": true
 };
 
 /**
