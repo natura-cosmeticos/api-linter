@@ -27,7 +27,10 @@ export const validate = async (api: string, rules?: Rules) => {
   const parsedApi: any = await parse(api);
 
   if (parsedApi.swagger) {
-    return Promise.reject(Error('This is not using OpenAPI 3.0.0^'));
+    const error = new Error();
+    error.name = 'NonValidApiVersion';
+    error.message = 'This is not using OpenAPI 3.0.0^';
+    return Promise.reject(error);
   }
 
   const parsedRules: Rules = {
