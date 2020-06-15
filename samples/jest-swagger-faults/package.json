@@ -8,8 +8,8 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "@naturacosmeticos/api-linter": "^1.0.3",
-    "jest": "^24.9.0"
+    "@naturacosmeticos/api-linter": "1.0.3",
+    "jest": "24.9.0"
   },
   "private": true
 }
