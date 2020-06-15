@@ -1,6 +1,6 @@
 {
   "name": "@naturacosmeticos/api-linter",
-  "version": "0.0.0-development",
+  "version": "1.0.0-beta",
   "description": "A comprehensive API linter for swagger files following Natura Cosmeticos best practices",
   "main": "dist/index.js",
   "bin": {
