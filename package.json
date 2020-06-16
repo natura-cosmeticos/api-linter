@@ -48,7 +48,7 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "@types/jest": "24.9.1",
+    "@types/jest": "26.0.0",
     "@types/mime-types": "2.1.0",
     "@types/pluralize": "0.0.29",
     "@types/yargs": "15.0.2",
