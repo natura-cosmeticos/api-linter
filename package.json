@@ -57,7 +57,7 @@
     "husky": "4.2.5",
     "jest": "24.9.0",
     "semantic-release": "16.0.4",
-    "snyk": "1.286.0",
+    "snyk": "1.387.1",
     "ts-jest": "24.3.0",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0"
