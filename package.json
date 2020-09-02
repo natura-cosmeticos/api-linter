@@ -54,7 +54,7 @@
     "@types/yargs": "15.0.5",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "3.2.0",
-    "husky": "4.2.1",
+    "husky": "4.2.5",
     "jest": "24.9.0",
     "semantic-release": "16.0.4",
     "snyk": "1.286.0",
