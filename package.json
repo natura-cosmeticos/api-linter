@@ -52,7 +52,7 @@
     "@types/mime-types": "2.1.0",
     "@types/pluralize": "0.0.29",
     "@types/yargs": "15.0.5",
-    "commitizen": "^4.1.2",
+    "commitizen": "4.1.2",
     "cz-conventional-changelog": "3.2.0",
     "husky": "4.2.5",
     "jest": "26.4.2",
