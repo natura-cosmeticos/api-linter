@@ -2424,6 +2424,26 @@ commander@^2.12.1, commander@^2.7.1, commander@~2.20.3:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
+commitizen@4.2.4:
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/commitizen/-/commitizen-4.2.4.tgz#a3e5b36bd7575f6bf6e7aa19dbbf06b0d8f37165"
+  integrity sha512-LlZChbDzg3Ir3O2S7jSo/cgWp5/QwylQVr59K4xayVq8S4/RdKzSyJkghAiZZHfhh5t4pxunUoyeg0ml1q/7aw==
+  dependencies:
+    cachedir "2.2.0"
+    cz-conventional-changelog "3.2.0"
+    dedent "0.7.0"
+    detect-indent "6.0.0"
+    find-node-modules "^2.1.2"
+    find-root "1.1.0"
+    fs-extra "8.1.0"
+    glob "7.1.4"
+    inquirer "6.5.2"
+    is-utf8 "^0.2.1"
+    lodash "^4.17.20"
+    minimist "1.2.5"
+    strip-bom "4.0.0"
+    strip-json-comments "3.0.1"
+
 commitizen@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/commitizen/-/commitizen-4.0.3.tgz#c19a4213257d0525b85139e2f36db7cc3b4f6dae"
@@ -2442,26 +2462,6 @@ commitizen@^4.0.3:
     lodash "4.17.15"
     minimist "1.2.0"
     shelljs "0.7.6"
-    strip-bom "4.0.0"
-    strip-json-comments "3.0.1"
-
-commitizen@^4.2.3:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/commitizen/-/commitizen-4.2.4.tgz#a3e5b36bd7575f6bf6e7aa19dbbf06b0d8f37165"
-  integrity sha512-LlZChbDzg3Ir3O2S7jSo/cgWp5/QwylQVr59K4xayVq8S4/RdKzSyJkghAiZZHfhh5t4pxunUoyeg0ml1q/7aw==
-  dependencies:
-    cachedir "2.2.0"
-    cz-conventional-changelog "3.2.0"
-    dedent "0.7.0"
-    detect-indent "6.0.0"
-    find-node-modules "^2.1.2"
-    find-root "1.1.0"
-    fs-extra "8.1.0"
-    glob "7.1.4"
-    inquirer "6.5.2"
-    is-utf8 "^0.2.1"
-    lodash "^4.17.20"
-    minimist "1.2.5"
     strip-bom "4.0.0"
     strip-json-comments "3.0.1"
 
@@ -8153,7 +8153,7 @@ secure-keys@^1.0.0:
   resolved "https://registry.yarnpkg.com/secure-keys/-/secure-keys-1.0.0.tgz#f0c82d98a3b139a8776a8808050b824431087fca"
   integrity sha1-8MgtmKOxOah3aogIBQuCRDEIf8o=
 
-semantic-release@^17.4.0:
+semantic-release@17.4.7:
   version "17.4.7"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.4.7.tgz#88e1dce7294cc43acc54c4e0a83f582264567206"
   integrity sha512-3Ghu8mKCJgCG3QzE5xphkYWM19lGE3XjFdOXQIKBM2PBpBvgFQ/lXv31oX0+fuN/UjNFO/dqhNs8ATLBhg6zBg==
